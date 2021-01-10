@@ -2,5 +2,6 @@
   "username": "",
   "channel": "",
   "prefix": "+",
-  "token": ""
+  "token": "",
+  "secretUsers": []
 }
