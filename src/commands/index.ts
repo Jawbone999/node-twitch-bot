@@ -7,7 +7,14 @@ export const handlers: any = {};
 readdirSync(__dirname)
   .filter((file) => file.indexOf("-command") !== -1)
   .forEach((file) => {
-    const handler = require(join(__dirname, file)).handler;
-    const command = file.split("-command")[0];
-    handlers[command] = handler;
+    const command = require(join(__dirname, file));
+    const handler = command.handler;
+    const aliases = command.aliases;
+
+    aliases.forEach((alias: string) => {
+      if (handlers[alias]) {
+        logger.warn(`Duplicate command alias detected: ${alias}`);
+      }
+      handlers[alias] = handler;
+    });
   });

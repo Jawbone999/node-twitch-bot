@@ -13,7 +13,7 @@ export const client = new Client({
     username: properties.bot.username,
     password: properties.bot.token,
   },
-  channels: [properties.bot.channel],
+  channels: properties.bot.channels,
   logger,
 });
 

@@ -2,6 +2,12 @@ import { logger } from "./utils/logger";
 import { client, prefix } from "./services/twitchService";
 import { handlers } from "./commands/index";
 
+// Log everyone who joins
+client.on("join", (channel, username, _self) =>
+  logger.info(`[${channel}] ${username} just joined`)
+);
+
+// Handle incoming messages
 client.on("message", (channel, tags, message, self) => {
   if (self || !message.startsWith(prefix)) return;
 
