@@ -1,0 +1,9 @@
+{
+  "console": {
+    "level": "info"
+  },
+  "file": {
+    "level": "info",
+    "filename": "node-twitch-bot-log"
+  }
+}
