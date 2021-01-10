@@ -1,7 +1,3 @@
 {
-  "twitch": {
-    "url": "irc.twitch.tv",
-    "port": 6667,
-    "token": ""
-  }
+  
 }
