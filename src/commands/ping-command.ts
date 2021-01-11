@@ -1,7 +1,5 @@
 import { ChatUserstate } from "tmi.js";
-import { client } from "../services/twitchService";
 import { isTrusted, replyInContext } from "../utils/chat";
-import { logger } from "../utils/logger";
 
 export const aliases = ["ping"];
 
