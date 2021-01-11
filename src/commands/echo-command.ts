@@ -2,15 +2,17 @@ import { ChatUserstate } from "tmi.js";
 import { client } from "../services/twitchService";
 import { isTrusted, replyInContext } from "../utils/chat";
 import { logger } from "../utils/logger";
+import { properties } from "../utils/properties";
 
-export const aliases = ["ping"];
+export const aliases = ["echo", "say"];
 
 export function handler(
   channel: string,
   tags: ChatUserstate,
-  _params: String[]
+  params: String[]
 ) {
   if (isTrusted(tags)) {
-    replyInContext(channel, tags, "Pong!");
+    const msg = params.join(" ");
+    replyInContext(channel, tags, msg);
   }
 }

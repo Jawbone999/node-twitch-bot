@@ -17,6 +17,7 @@ client.on("message", (channel, tags, message, self) => {
 
   const handler = handlers[command];
   if (handler) {
+    logger.info(`Executing ${command.toUpperCase()}...`);
     handler(channel, tags, params);
   } else {
     logger.warn(`Invalid command: ${command}`);
