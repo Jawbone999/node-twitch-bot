@@ -6,7 +6,7 @@ export const aliases = ["ping"];
 export function handler(
   channel: string,
   tags: ChatUserstate,
-  _params: String[]
+  _params: string[]
 ) {
   if (isTrusted(tags)) {
     replyInContext(channel, tags, "Pong!");

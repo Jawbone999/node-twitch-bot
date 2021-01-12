@@ -9,7 +9,7 @@ export const aliases = ["echo", "say"];
 export function handler(
   channel: string,
   tags: ChatUserstate,
-  params: String[]
+  params: string[]
 ) {
   if (isTrusted(tags)) {
     const msg = params.join(" ");

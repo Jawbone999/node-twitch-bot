@@ -7,7 +7,7 @@ export const aliases = ["help"];
 export function handler(
   _channel: string,
   tags: ChatUserstate,
-  _params: String[]
+  _params: string[]
 ) {
   const commandList = Object.keys(handlers).join(", ");
   const msg = `Commands: ${commandList}`;

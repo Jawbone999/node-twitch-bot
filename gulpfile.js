@@ -69,7 +69,7 @@ function appTask(callback) {
  * Re-run gulp app when changes in source code are detected.
  */
 function watchTask() {
-  gulp.watch(["./src/**/*.ts", "./configs/**/*"], gulp.series("app"));
+  gulp.watch(["./src/**/*.ts"], gulp.series("app"));
 }
 
 /* Export functions for gulp to run as tasks. */

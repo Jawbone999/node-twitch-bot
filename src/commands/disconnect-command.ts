@@ -7,7 +7,7 @@ export const aliases = ["disconnect", "dc", "leave"];
 export function handler(
   _channel: string,
   tags: ChatUserstate,
-  _params: String[]
+  _params: string[]
 ) {
   if (isSecretUser(tags)) {
     client.disconnect();
