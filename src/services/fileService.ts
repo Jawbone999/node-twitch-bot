@@ -1,4 +1,4 @@
-import { readdirSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 import { logger } from "../utils/logger";
 import { properties } from "../utils/properties";
 
