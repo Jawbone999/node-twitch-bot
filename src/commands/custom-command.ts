@@ -6,9 +6,9 @@ import { properties } from "../utils/properties";
 
 export const aliases = ["command"];
 
-function createCommand(command: string, params: string[]) {
+function createCommand(command: string, reply: string) {
   try {
-    properties.custom[command] = params.join(" ");
+    properties.custom[command] = reply;
     updateConfig("customCommands");
     return `Command '${command}' successfully created.`;
   } catch (err) {
@@ -29,14 +29,14 @@ function deleteCommand(command: string) {
 }
 
 export function handler(
-  channel: string,
+  _channel: string,
   tags: ChatUserstate,
   params: string[]
 ) {
   let msg: string;
   const operation = params[0];
   const command = params[1];
-  const reply = params.slice(2);
+  const reply = params.slice(2).join(" ");
 
   switch (operation) {
     case "create":
