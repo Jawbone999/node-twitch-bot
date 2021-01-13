@@ -41,3 +41,9 @@ client.on("message", (channel, tags, message, self) => {
     }
   }
 });
+
+process.on("SIGINT", () => {
+  logger.info("Gracefully shutting down from SIGINT (Ctrl-C)");
+  client.disconnect();
+  process.exit(1);
+});

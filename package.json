@@ -13,6 +13,7 @@
     "prettier:fix": "prettier ./src --write",
     "test": "npm run lint",
     "test:fix": "npm run lint:fix",
+    "fix": "npm run test:fix",
     "clean": "gulp clean",
     "compile": "gulp compile",
     "watch": "gulp watch",
